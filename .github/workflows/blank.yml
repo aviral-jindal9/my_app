@@ -18,9 +18,9 @@ jobs:
 
       - name: Log in to Amazon ECR
         env:
-          AWS_REGION: ap-southeash-2
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ap-southeast-2
+          AWS_ACCESS_KEY_ID: AKIAZAI4GVQF3D4TMIF2
+          AWS_SECRET_ACCESS_KEY: 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
         run: |
           aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin 619071319051.dkr.ecr.$AWS_REGION.amazonaws.com
 
