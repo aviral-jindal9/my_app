@@ -26,6 +26,6 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t my-image:latest ./Dockerfile
+          docker build -t my-image:latest .
           docker tag my-image:latest 619071319051.dkr.ecr.$AWS_REGION.amazonaws.com/my-repo:latest
           docker push 619071319051.dkr.ecr.$AWS_REGION.amazonaws.com/my-repo:latest
