@@ -18,14 +18,13 @@ jobs:
 
       - name: Log in to Amazon ECR
         env:
-          AWS_REGION: ap-southeast-2
           AWS_ACCESS_KEY_ID: AKIAZAI4GVQF3D4TMIF2
           AWS_SECRET_ACCESS_KEY: 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
         run: |
-          aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin 619071319051.dkr.ecr.$AWS_REGION.amazonaws.com
+          aws ecr get-login-password --region ap-southeast-2 | docker login --username AWS --password-stdin 619071319051.dkr.ecr.ap-southeast-2.amazonaws.com
 
       - name: Build and push Docker image
         run: |
           docker build -t my-image:latest . 
-          docker tag my-image:latest 619071319051.dkr.ecr.$AWS_REGION.amazonaws.com/my-app:latest
-          docker push 619071319051.dkr.ecr.$AWS_REGION.amazonaws.com/my-app
+          docker tag my-image:latest 619071319051.dkr.ecr.ap-southeast-2.amazonaws.com/my-app:latest
+          docker push 619071319051.dkr.ecr.ap-southeast-2.amazonaws.com/my-app
